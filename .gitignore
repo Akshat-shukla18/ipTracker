@@ -1,0 +1,7 @@
+# ipTracker secrets
+.env
+.env.*
+
+# Browser env wiring file (contains key)
+env.js
+
