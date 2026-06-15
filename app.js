@@ -1,4 +1,4 @@
-const API_KEY = "5ded3477bb9d42f381b552f447b82ead";
+const API_KEY = window.__ENV__?.IPGEO_API_KEY || "";
 const ipInput = document.getElementById("ip-input");
 const searchBtn = document.getElementById("search-btn");
 const ipDisplay = document.getElementById("ip");
@@ -33,7 +33,7 @@ function updateRecentSearches() {
   recentList.innerHTML = searches
     .map(ip => `<li>${ip}</li>`)
     .join("");
-    document.querySelectorAll("#recent-list li").forEach(item => {
+document.querySelectorAll("#recent-list li").forEach(item => {
     item.addEventListener("click", () => {
       ipInput.value = item.textContent;
       fetchIPData(item.textContent);
